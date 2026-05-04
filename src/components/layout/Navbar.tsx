@@ -3,7 +3,8 @@ import { Menu, X, Globe } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "../../context/LanguageContext";
-import logoUrl from "../../assets/logo.png";
+
+const logoUrl = "https://drive.google.com/thumbnail?id=1bbJINa3-02CEfVaHMQvQ987O-lWtoktF&sz=w1000";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
