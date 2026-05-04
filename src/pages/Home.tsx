@@ -13,6 +13,23 @@ export function Home() {
     { icon: <Sparkles size={20} />, title: t('home.values.unique.title'), desc: t('home.values.unique.desc') },
   ];
 
+  const renderTitleWithFlag = (text: string) => {
+    const parts = text.split(/(Turkey|تركيا)/g);
+    return parts.map((part, index) => {
+      if (part === 'Turkey' || part === 'تركيا') {
+        return (
+          <span 
+            key={index} 
+            className="bg-[#E30A17] bg-[url('https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg')] bg-[length:auto_110%] bg-[position:45%_50%] bg-no-repeat bg-clip-text text-transparent"
+          >
+            {part}
+          </span>
+        );
+      }
+      return <span key={index}>{part}</span>;
+    });
+  };
+
   return (
     <div className="min-h-screen pt-20 sm:pt-24 font-sans text-black">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
@@ -31,7 +48,7 @@ export function Home() {
                 <span className="text-[10px] font-black uppercase tracking-widest text-black">{t('home.hero.subtitle')}</span>
               </div>
               <h1 className="text-[2.5rem] min-[400px]:text-[3rem] sm:text-6xl md:text-[80px] lg:text-[100px] font-black leading-[0.9] tracking-tighter uppercase mb-6 sm:mb-8 rtl:tracking-normal rtl:leading-[1.2]">
-                {t('home.hero.title_part1')}<br/>{t('home.hero.title_part2')}
+                {t('home.hero.title_part1')}<br/>{renderTitleWithFlag(t('home.hero.title_part2'))}
               </h1>
             </motion.div>
 

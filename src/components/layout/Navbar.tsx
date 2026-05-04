@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "../../context/LanguageContext";
 
-const logoUrl = "https://drive.google.com/thumbnail?id=1bbJINa3-02CEfVaHMQvQ987O-lWtoktF&sz=w1000";
+const logoUrl = "https://lh3.googleusercontent.com/d/1bbJINa3-02CEfVaHMQvQ987O-lWtoktF";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
