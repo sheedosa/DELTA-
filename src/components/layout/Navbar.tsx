@@ -3,6 +3,7 @@ import { Menu, X, Globe } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "../../context/LanguageContext";
+import logoUrl from "../../assets/logo.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 sm:px-12 flex justify-between items-center">
         <Link to="/" className="flex flex-col items-start group">
           <img 
-            src="/logo.png"
+            src={logoUrl}
             alt="Delta Logo" 
             className="h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105"
             referrerPolicy="no-referrer"
