@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
+import logoUrl from "../../assets/logo.png";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -9,7 +10,7 @@ export function Footer() {
         <div className="md:col-span-1 flex flex-col items-start">
           <Link to="/" className="flex items-center gap-3 mb-6 mix-blend-multiply opacity-80 hover:opacity-100 transition-opacity">
             <img 
-              src="/logo.png" 
+              src={logoUrl}
               alt="Delta Logo" 
               className="h-12 w-auto object-contain"
               referrerPolicy="no-referrer"
