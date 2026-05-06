@@ -11,67 +11,97 @@ export function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-8 sm:mb-16 mt-4 sm:mt-0 gap-6">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-20 gap-8">
           <div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[1.1] rtl:tracking-normal rtl:leading-[1.4] mb-4 transition-colors">
-              {t('contact.title1')} <br className="hidden lg:block" /><span className="text-white">{t('contact.title2')}</span>
+            <h1 className="mb-6 text-stone-900 flex flex-col gap-2">
+              <span className="text-sm md:text-base font-medium tracking-[0.2em] uppercase text-stone-500 rtl:tracking-normal">{t('contact.title1')}</span>
+              <span className="font-display text-[3.5rem] sm:text-5xl md:text-[80px] leading-[1] font-bold uppercase tracking-tighter text-stone-900 rtl:font-sans rtl:tracking-normal">{t('contact.title2')}</span>
             </h1>
-            <p className="max-w-md text-sm text-black/70">
+            <p className="max-w-md text-sm md:text-base text-stone-600 font-light leading-relaxed mb-12">
               {t('contact.desc')}
             </p>
+            <div className="w-full max-w-xl h-64 overflow-hidden border border-stone-200 hidden md:block">
+               <img 
+                 src="https://lh3.googleusercontent.com/d/1Z08L1hrdsPME_2MosvIrso_NMxoZFaLv" 
+                 alt="Delta Hardware Display" 
+                 loading="lazy"
+                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" 
+                 referrerPolicy="no-referrer"
+               />
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-12">
             {/* Distributor */}
-            <div className="bg-white p-8 border-t-4 border-black">
-              <span className="text-[10px] font-bold uppercase tracking-widest opacity-50 block mb-4">{t('contact.dist.title')}</span>
-              <h3 className="font-serif rtl:font-sans text-2xl font-medium mb-2">{t('contact.dist.name')}</h3>
-              <p className="text-sm font-mono text-black/90 font-medium mb-6">{t('contact.dist.role')}</p>
+            <div className="flex flex-col group">
+              <div className="border-b border-stone-300 pb-6 mb-8 group-hover:border-stone-500 transition-colors">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400 block mb-4">{t('contact.dist.title')}</span>
+                <h3 className="font-display text-2xl font-bold tracking-tight mb-2 text-stone-900">{t('contact.dist.name')}</h3>
+                <p className="text-sm text-stone-500 font-light">{t('contact.dist.role')}</p>
+              </div>
               
-              <ul className="space-y-3 text-sm">
+              <ul className="space-y-6 text-xs sm:text-sm text-stone-800">
                 <li className="flex flex-col">
-                  <span className="text-[10px] uppercase font-bold tracking-widest opacity-50">{t('contact.label.phone')}</span>
-                  <span dir="ltr" className="rtl:text-right w-fit">+218 92 577 6619</span>
+                  <span className="text-[9px] sm:text-[10px] uppercase font-semibold tracking-[0.2em] text-stone-400 mb-1">{t('contact.label.location')}</span>
+                  <span className="w-fit font-light">{t('contact.dist.loc')}</span>
+                </li>
+                <li className="flex flex-col">
+                  <span className="text-[9px] sm:text-[10px] uppercase font-semibold tracking-[0.2em] text-stone-400 mb-1">{t('contact.label.email')}</span>
+                  <a href={`mailto:${t('contact.dist.email')}`} className="w-fit hover:opacity-70 transition-opacity font-light">{t('contact.dist.email')}</a>
+                </li>
+                <li className="flex flex-col">
+                  <span className="text-[9px] sm:text-[10px] uppercase font-semibold tracking-[0.2em] text-stone-400 mb-1">{t('contact.label.website')}</span>
+                  <a href={`https://${t('contact.dist.website')}`} target="_blank" rel="noopener noreferrer" className="w-fit hover:opacity-70 transition-opacity font-light">{t('contact.dist.website')}</a>
+                </li>
+                <li className="flex flex-col">
+                  <span className="text-[9px] sm:text-[10px] uppercase font-semibold tracking-[0.2em] text-stone-400 mb-1">{t('contact.label.phone')}</span>
+                  <a href={`tel:${t('contact.dist.phone').replace(/\s+/g, '')}`} dir="ltr" className="rtl:text-right w-fit hover:opacity-70 transition-opacity font-light">{t('contact.dist.phone')}</a>
                 </li>
               </ul>
             </div>
 
             {/* Factory */}
-            <div className="bg-white p-8 border-t-4 border-black">
-              <span className="text-[10px] font-bold uppercase tracking-widest opacity-50 block mb-4">{t('contact.factory.title')}</span>
-              <h3 className="font-serif rtl:font-sans text-2xl font-medium mb-2">{t('contact.factory.name')}</h3>
-              <p className="text-sm font-mono text-black/90 font-medium mb-6">{t('contact.factory.role')}</p>
+            <div className="flex flex-col group">
+              <div className="border-b border-stone-300 pb-6 mb-8 group-hover:border-stone-500 transition-colors">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400 block mb-4">{t('contact.factory.title')}</span>
+                <h3 className="font-display text-2xl font-bold tracking-tight mb-2 text-stone-900">{t('contact.factory.name')}</h3>
+                <p className="text-sm text-stone-500 font-light">{t('contact.factory.role')}</p>
+              </div>
               
-              <ul className="space-y-3 text-sm">
+              <ul className="space-y-6 text-xs sm:text-sm text-stone-800">
                 <li className="flex flex-col">
-                  <span className="text-[10px] uppercase font-bold tracking-widest opacity-50">{t('contact.label.phone')}</span>
-                  <span dir="ltr" className="rtl:text-right w-fit">+90 532 354 88 43</span>
+                  <span className="text-[9px] sm:text-[10px] uppercase font-semibold tracking-[0.2em] text-stone-400 mb-1">{t('contact.label.email')}</span>
+                  <a href={`mailto:${t('contact.factory.email')}`} className="w-fit hover:opacity-70 transition-opacity font-light">{t('contact.factory.email')}</a>
+                </li>
+                <li className="flex flex-col">
+                  <span className="text-[9px] sm:text-[10px] uppercase font-semibold tracking-[0.2em] text-stone-400 mb-1">{t('contact.label.phone')}</span>
+                  <a href={`tel:${t('contact.factory.phone').replace(/\s+/g, '')}`} dir="ltr" className="rtl:text-right w-fit hover:opacity-70 transition-opacity font-light">{t('contact.factory.phone')}</a>
                 </li>
               </ul>
             </div>
           </div>
 
           {/* Form */}
-          <div>
-            <h3 className="font-bold uppercase tracking-widest text-sm mb-8">{t('contact.form.title')}</h3>
-            <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest">{t('contact.form.name')}</label>
-                <input type="text" className="border-b border-black/20 py-2 w-full outline-none focus:border-black transition-colors bg-transparent placeholder-black/30 rtl:text-right" placeholder={t('contact.form.name_ph')} />
+          <div className="lg:col-span-7 bg-white/40 backdrop-blur-sm p-8 sm:p-12 lg:p-16 border border-stone-200">
+            <h3 className="font-semibold uppercase tracking-[0.2em] text-xs mb-12 text-stone-400">{t('contact.form.title')}</h3>
+            <form className="flex flex-col gap-10" onSubmit={(e) => e.preventDefault()}>
+              <div className="flex flex-col gap-3">
+                <label className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-500">{t('contact.form.name')}</label>
+                <input type="text" className="border-b border-stone-300 pb-3 w-full outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300 rtl:text-right font-light" placeholder={t('contact.form.name_ph')} />
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest">{t('contact.form.contact')}</label>
-                <input type="text" className="border-b border-black/20 py-2 w-full outline-none focus:border-black transition-colors bg-transparent placeholder-black/30 rtl:text-right" placeholder={t('contact.form.contact_ph')} />
+              <div className="flex flex-col gap-3">
+                <label className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-500">{t('contact.form.contact')}</label>
+                <input type="text" className="border-b border-stone-300 pb-3 w-full outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300 rtl:text-right font-light" placeholder={t('contact.form.contact_ph')} />
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest">{t('contact.form.msg')}</label>
-                <textarea rows={4} className="border-b border-black/20 py-2 w-full outline-none focus:border-black transition-colors bg-transparent placeholder-black/30 resize-none rtl:text-right" placeholder={t('contact.form.msg_ph')}></textarea>
+              <div className="flex flex-col gap-3">
+                <label className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-500">{t('contact.form.msg')}</label>
+                <textarea rows={4} className="border-b border-stone-300 pb-3 w-full outline-none focus:border-stone-800 transition-colors bg-transparent placeholder-stone-300 resize-none rtl:text-right font-light" placeholder={t('contact.form.msg_ph')}></textarea>
               </div>
               <button 
                 type="submit"
-                className="bg-white border-2 border-black text-black px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-neutral-100 transition-colors rtl:self-end self-start mt-4"
+                className="bg-stone-900 text-white px-10 py-5 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] hover:bg-stone-800 transition-colors rtl:self-end self-start mt-4"
               >
                 {t('contact.form.submit')}
               </button>

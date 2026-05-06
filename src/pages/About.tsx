@@ -12,33 +12,47 @@ export function About() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[1.1] rtl:tracking-normal rtl:leading-[1.4] mb-8 sm:mb-16 mt-4 sm:mt-0 break-words">
-          {t('about.title1')}<br className="hidden lg:block"/> {t('about.title2')} <br className="hidden md:block lg:hidden"/><span className="text-white">{t('about.title3')}</span>
+        <h1 className="mb-16 sm:mb-24 text-stone-900 flex flex-col gap-2">
+          <span className="text-sm md:text-base font-medium tracking-[0.2em] uppercase text-stone-500 rtl:tracking-normal">{t('about.title1')}</span>
+          <span className="font-display text-[3.5rem] sm:text-6xl md:text-[80px] lg:text-[100px] leading-[1] font-bold uppercase tracking-tighter text-stone-900 rtl:font-sans rtl:tracking-normal">{t('about.title2')}</span>
+          <span className="text-sm md:text-base font-medium tracking-[0.2em] uppercase text-stone-400 mt-2 rtl:tracking-normal">{t('about.title3')}</span>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-          <div className="space-y-6">
-             <p className="text-lg leading-relaxed font-serif rtl:font-sans">
+          <div className="space-y-6 md:pr-12 rtl:md:pr-0 rtl:md:pl-12">
+             <p className="text-2xl leading-relaxed font-display font-medium text-stone-800 tracking-tight">
                {t('about.desc1')}
             </p>
-            <p className="text-sm leading-relaxed text-black/70">
+            <div className="w-12 h-px bg-stone-300 my-8"></div>
+            
+            <img 
+              src="https://lh3.googleusercontent.com/d/1x-0aMJcNN6aZr37jY_6_3gVbOzyVYtRs" 
+              alt="Delta Architectural Handles" 
+              loading="lazy"
+              className="w-full aspect-[4/3] object-cover mb-8"
+              referrerPolicy="no-referrer"
+            />
+
+            <p className="text-base leading-relaxed text-stone-600 font-light">
               {t('about.desc2')}
             </p>
-            <p className="text-sm leading-relaxed text-black/70">
+            <p className="text-base leading-relaxed text-stone-600 font-light">
               {t('about.desc3')}
             </p>
-            <p className="text-sm font-bold uppercase tracking-widest pt-4">
-              {t('about.desc4')}
-            </p>
+            {t('about.desc4') && (
+              <p className="text-xs font-semibold uppercase tracking-widest pt-6 text-stone-800">
+                {t('about.desc4')}
+              </p>
+            )}
           </div>
-          <div className="bg-white p-6 flex-1 sm:p-8 border-l-4 rtl:border-l-0 rtl:border-r-4 border-black self-start">
-            <h3 className="text-sm font-bold uppercase tracking-widest mb-4">{t('about.company.title')}</h3>
-            <p className="text-sm leading-relaxed text-black/90 mb-6 font-medium">
+          <div className="bg-white/50 backdrop-blur-sm p-10 sm:p-12 border border-stone-200 self-start group hover:bg-white transition-colors duration-500">
+            <h3 className="text-[10px] font-semibold uppercase tracking-[0.2em] mb-8 text-stone-400">{t('about.company.title')}</h3>
+            <p className="text-sm leading-relaxed text-stone-700 mb-6 font-light">
               {t('about.company.desc1')}
             </p>
-            <p className="text-sm leading-relaxed text-black/90 mb-6 font-medium">
+            <p className="text-sm leading-relaxed text-stone-700 mb-10 font-light">
               {t('about.company.desc2')}
             </p>
-            <Link to="/contact" className="text-xs font-bold uppercase tracking-widest underline decoration-black decoration-2 underline-offset-4 hover:opacity-70 transition-opacity">
+            <Link to="/contact" className="text-[10px] font-semibold uppercase tracking-[0.2em] border-b border-stone-300 pb-2 text-stone-500 hover:border-stone-900 hover:text-stone-900 transition-all inline-block">
               {t('about.company.link')}
             </Link>
           </div>

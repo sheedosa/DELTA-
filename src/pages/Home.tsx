@@ -7,121 +7,208 @@ export function Home() {
   const { t } = useLanguage();
 
   const valueProps = [
-    { icon: <Drill size={20} />, title: t('home.values.hc.title'), desc: t('home.values.hc.desc') },
-    { icon: <Globe size={20} />, title: t('home.values.tr.title'), desc: t('home.values.tr.desc') },
-    { icon: <Award size={20} />, title: t('home.values.quality.title'), desc: t('home.values.quality.desc') },
-    { icon: <Sparkles size={20} />, title: t('home.values.unique.title'), desc: t('home.values.unique.desc') },
+    {
+      icon: <Drill size={20} />,
+      title: t("home.values.hc.title"),
+      desc: t("home.values.hc.desc"),
+    },
+    {
+      icon: <Globe size={20} />,
+      title: t("home.values.tr.title"),
+      desc: t("home.values.tr.desc"),
+    },
+    {
+      icon: <Award size={20} />,
+      title: t("home.values.quality.title"),
+      desc: t("home.values.quality.desc"),
+    },
+    {
+      icon: <Sparkles size={20} />,
+      title: t("home.values.unique.title"),
+      desc: t("home.values.unique.desc"),
+    },
   ];
 
-  const renderTitleWithFlag = (text: string) => {
-    const parts = text.split(/(Turkey|تركيا)/g);
-    return parts.map((part, index) => {
-      if (part === 'Turkey' || part === 'تركيا') {
-        return (
-          <span 
-            key={index} 
-            className="bg-[#E30A17] bg-[url('https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg')] bg-[length:auto_110%] bg-[position:45%_50%] bg-no-repeat bg-clip-text text-transparent"
-          >
-            {part}
-          </span>
-        );
-      }
-      return <span key={index}>{part}</span>;
-    });
-  };
-
   return (
-    <div className="min-h-screen pt-20 sm:pt-24 font-sans text-black">
+    <div className="min-h-screen pt-20 sm:pt-24 font-sans text-white relative bg-stone-950 overflow-hidden">
+      {/* Photographic Architectural Background w/ Dark overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src="https://lh3.googleusercontent.com/d/1YWvtsl0Z_5ATzPdEiCoaCUESWb04Z0BI"
+          alt=""
+          loading="eager"
+          fetchPriority="high"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-60 transition-opacity duration-1000"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/40 to-stone-900 border-b border-stone-800"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/50 to-transparent rtl:from-transparent rtl:via-stone-950/50 rtl:to-stone-950/90"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-        
         {/* Hero Section */}
         <section className="min-h-[70vh] sm:min-h-[80vh] flex flex-col justify-start sm:justify-center pt-16 pb-12 sm:py-20 lg:pt-0">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-            
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="lg:col-span-7"
             >
-              <div className="inline-block border-2 border-black px-3 py-1 mb-6 sm:mb-8">
-                <span className="text-[10px] font-black uppercase tracking-widest text-black">{t('home.hero.subtitle')}</span>
-              </div>
-              <h1 className="text-[2.5rem] min-[400px]:text-[3rem] sm:text-6xl md:text-[80px] lg:text-[100px] font-black leading-[0.9] tracking-tighter uppercase mb-6 sm:mb-8 rtl:tracking-normal rtl:leading-[1.2]">
-                {t('home.hero.title_part1')}<br/>{renderTitleWithFlag(t('home.hero.title_part2'))}
+              <h1 className="mb-8 sm:mb-10 text-white">
+                <span className="block text-sm md:text-base font-medium tracking-[0.2em] md:tracking-[0.4em] uppercase text-stone-400 mb-4 rtl:tracking-normal">
+                  {t("home.hero.title_part1")}
+                </span>
+                <span className="block font-display text-[4rem] sm:text-6xl md:text-[80px] lg:text-[100px] leading-[0.9] font-bold uppercase tracking-tighter rtl:font-sans rtl:tracking-normal w-[120%] drop-shadow-2xl">
+                  {t("home.hero.title_part2")}
+                </span>
               </h1>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
               className="lg:col-span-5 flex flex-col items-start lg:pl-12 rtl:lg:pl-0 rtl:lg:pr-12"
             >
-              <p className="font-serif rtl:font-sans text-xl sm:text-2xl lg:text-3xl italic rtl:not-italic leading-tight mb-8 sm:mb-10 border-l-2 border-black pl-4 sm:pl-6 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-4 sm:rtl:pr-6">
-                {t('home.hero.desc')}
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full">
-                <Link to="/products" className="bg-white text-black px-6 sm:px-8 py-4 text-[10px] sm:text-xs font-black uppercase tracking-widest hover:bg-neutral-100 transition-colors flex items-center justify-center gap-2 group w-full sm:w-auto">
-                  {t('home.hero.btn_explore')} <ArrowRight size={16} className="group-hover:-rotate-45 rtl:group-hover:rotate-45 transition-transform" />
+              <div className="border-l border-stone-600 pl-6 sm:pl-8 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-6 sm:rtl:pr-8 mb-10 sm:mb-12">
+                <p className="font-display text-xl sm:text-2xl lg:text-3xl font-medium leading-relaxed mb-8 text-stone-300">
+                  {t("home.hero.desc")}
+                </p>
+                <div className="flex items-center gap-4 border-t border-stone-700/50 pt-6 mt-4">
+                  <div className="h-px w-8 bg-stone-600"></div>
+                  <p className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400">
+                    {t("home.hero.distributor")}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col flex-wrap sm:flex-row gap-4 sm:gap-6 w-full">
+                <Link
+                  to="/products"
+                  className="bg-white text-stone-900 px-8 sm:px-10 py-4 sm:py-5 text-[10px] sm:text-xs font-semibold uppercase tracking-widest hover:bg-stone-100 transition-colors flex items-center justify-center gap-3 group w-full sm:w-auto"
+                >
+                  {t("home.hero.btn_explore")}{" "}
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"
+                  />
                 </Link>
-                <Link to="/about" className="border-2 border-black px-6 sm:px-8 py-4 text-[10px] sm:text-xs font-black uppercase tracking-widest hover:bg-white hover:text-black transition-colors text-center w-full sm:w-auto">
-                  {t('home.hero.btn_story')}
+                <Link
+                  to="/about"
+                  className="bg-transparent border border-stone-500 text-white px-8 sm:px-10 py-4 sm:py-5 text-[10px] sm:text-xs font-semibold uppercase tracking-widest hover:bg-stone-800/50 hover:border-stone-400 transition-colors text-center w-full sm:w-auto backdrop-blur-sm"
+                >
+                  {t("home.hero.btn_story")}
                 </Link>
               </div>
             </motion.div>
-
           </div>
         </section>
       </div>
 
-      {/* Highlight Strip */}
-      <section className="bg-white text-black relative z-10 py-16 border-y-8 border-[#f7c621]">
+      {/* Highlight Strip - Reimagined Light Theme */}
+      <section className="bg-white text-stone-900 relative z-10 py-24 lg:py-32 border-y border-stone-100">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {valueProps.map((prop, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.6 }}
-                className="flex flex-col gap-4"
+                transition={{
+                  delay: idx * 0.1,
+                  duration: 0.8,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="relative group p-8 bg-stone-50/50 border border-stone-100 hover:bg-white hover:shadow-2xl hover:shadow-stone-200/50 transition-all duration-700 flex flex-col items-start overflow-hidden"
               >
-                <div className="text-[#f7c621]">
+                {/* Subtle Decorative Number */}
+                <span className="absolute top-4 right-6 rtl:right-auto rtl:left-6 text-[4rem] font-bold text-stone-100 select-none group-hover:text-stone-200 transition-colors duration-700 font-display">
+                  0{idx + 1}
+                </span>
+
+                <div className="text-stone-900 mb-10 relative z-10 bg-white p-3 rounded-none border border-stone-100 shadow-sm group-hover:bg-stone-900 group-hover:text-white transition-all duration-500">
                   {prop.icon}
                 </div>
-                <h3 className="text-sm font-bold uppercase tracking-widest">{prop.title}</h3>
-                <p className="text-xs text-black/90 font-medium">{prop.desc}</p>
-                <div className="h-px w-12 bg-black/10 mt-2"></div>
+                
+                <h3 className="text-[10px] font-bold uppercase tracking-[0.25em] text-stone-900 mb-5 relative z-10">
+                  {prop.title}
+                </h3>
+                
+                <div className="h-px w-8 bg-stone-200 mb-6 group-hover:w-full transition-all duration-700 ease-in-out"></div>
+                
+                <p className="text-sm text-stone-500 leading-relaxed font-light relative z-10 group-hover:text-stone-600 transition-colors duration-500">
+                  {prop.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Product Showcase Gallery */}
+      <section className="py-24 bg-stone-950 relative z-10">
+         <div className="max-w-7xl mx-auto px-6 sm:px-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                <motion.img 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.8 }}
+                  src="https://lh3.googleusercontent.com/d/1XgNd3DS6VN5lorNmd13Z7Ap047x82YP5" 
+                  alt="Delta Door Handle" 
+                  loading="lazy"
+                  className="w-full aspect-square object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 border border-stone-800" 
+                  referrerPolicy="no-referrer"
+                />
+                <motion.img 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.8 }}
+                  src="https://lh3.googleusercontent.com/d/1JaosJ5VHtas6KUWgSEvIt3lfmDGNGgBH" 
+                  alt="Delta Product" 
+                  loading="lazy"
+                  className="w-full aspect-square object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 border border-stone-800 md:translate-y-8" 
+                  referrerPolicy="no-referrer"
+                />
+                <motion.img 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.8 }}
+                  src="https://lh3.googleusercontent.com/d/1z2MIHPASR4qxmTHdhrSf5N4-C5zcPFOk" 
+                  alt="Delta Design Detail" 
+                  loading="lazy"
+                  className="w-full aspect-square object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 border border-stone-800" 
+                  referrerPolicy="no-referrer"
+                />
+                <motion.img 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.8 }}
+                  src="https://lh3.googleusercontent.com/d/1x-0aMJcNN6aZr37jY_6_3gVbOzyVYtRs" 
+                  alt="Delta Door Pull" 
+                  loading="lazy"
+                  className="w-full aspect-square object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 border border-stone-800 md:translate-y-8" 
+                  referrerPolicy="no-referrer"
+                />
+            </div>
+         </div>
+      </section>
+
       {/* Brand Intro */}
-      <section className="py-24 relative z-10">
-        <motion.div 
+      <section className="py-32 lg:py-48 relative z-10 bg-transparent">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1 }}
           className="max-w-4xl mx-auto px-6 sm:px-12 text-center"
         >
-          <p className="font-serif rtl:font-sans text-3xl md:text-5xl italic rtl:not-italic leading-tight mb-8">
-            {t('home.brand.desc1')}
+          <div className="w-px h-16 bg-stone-600 mx-auto mb-12"></div>
+          <p className="text-sm md:text-base text-stone-400 mb-16 max-w-2xl mx-auto leading-relaxed">
+            {t("home.brand.desc2")}
           </p>
-          <p className="text-sm md:text-base text-black/80 mb-12 max-w-2xl mx-auto font-mono">
-            {t('home.brand.desc2')}
-          </p>
-          <Link to="/about" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border-b-2 border-black pb-1 hover:text-black/60 hover:border-black/60 transition-colors">
-            {t('home.brand.link')} <ArrowRight size={16} className="rtl:rotate-180" />
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] border-b border-stone-600 pb-2 text-stone-300 hover:text-white hover:border-stone-400 transition-all"
+          >
+            {t("home.brand.link")}
+            <ArrowRight size={14} className="rtl:rotate-180" />
           </Link>
         </motion.div>
       </section>
-
     </div>
   );
 }

@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "../../context/LanguageContext";
 
-const logoUrl = "https://lh3.googleusercontent.com/d/1bbJINa3-02CEfVaHMQvQ987O-lWtoktF";
+const logoUrl =
+  "https://lh3.googleusercontent.com/d/1bbJINa3-02CEfVaHMQvQ987O-lWtoktF";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,32 +27,34 @@ export function Navbar() {
   }, [location]);
 
   const links = [
-    { name: t('nav.collection'), path: "/products" },
-    { name: t('nav.craft'), path: "/craft" },
-    { name: t('nav.story'), path: "/about" },
-    { name: t('nav.contact'), path: "/contact" },
+    { name: t("nav.collection"), path: "/products" },
+    { name: t("nav.craft"), path: "/craft" },
+    { name: t("nav.story"), path: "/about" },
+    { name: t("nav.contact"), path: "/contact" },
   ];
 
   const handleLanguageToggle = () => {
-    setLang(lang === 'en' ? 'ar' : 'en');
+    setLang(lang === "en" ? "ar" : "en");
   };
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled || isOpen ? "bg-white text-black py-4 shadow-sm" : "bg-transparent text-black py-4 sm:py-6"
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled || isOpen
+          ? "bg-[#F8F7F5]/90 backdrop-blur-md border-b border-stone-200 py-4 shadow-sm text-stone-900"
+          : `bg-transparent py-4 sm:py-6 ${location.pathname === "/" ? "text-white" : "text-stone-900"}`
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12 flex justify-between items-center">
         <Link to="/" className="flex flex-col items-start group">
-          <img 
+          <img
             src={logoUrl}
-            alt="Delta Logo" 
-            className="h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105"
+            alt="Delta Logo"
+            className={`h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105 ${!scrolled && !isOpen && location.pathname === "/" ? "brightness-0 invert" : ""}`}
             referrerPolicy="no-referrer"
           />
           <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest mt-1 opacity-70">
-            {t('nav.subtitle')}
+            {t("nav.subtitle")}
           </span>
         </Link>
 
@@ -68,23 +71,23 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <button 
+          <button
             onClick={handleLanguageToggle}
             className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity ml-4 rtl:ml-0 rtl:mr-4"
           >
             <Globe size={16} />
-            {lang === 'en' ? 'عربي' : 'EN'}
+            {lang === "en" ? "عربي" : "EN"}
           </button>
         </div>
 
         {/* Mobile Toggle */}
         <div className="flex items-center gap-4 md:hidden">
-          <button 
+          <button
             onClick={handleLanguageToggle}
             className="flex items-center gap-1 text-xs font-bold uppercase tracking-widest opacity-80 hover:opacity-100 transition-opacity"
           >
             <Globe size={16} />
-            {lang === 'en' ? 'عربي' : 'EN'}
+            {lang === "en" ? "عربي" : "EN"}
           </button>
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -99,7 +102,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-white text-black p-6 shadow-2xl flex flex-col gap-6 md:hidden"
+            className="absolute top-full left-0 w-full bg-white text-zinc-900 p-6 shadow-2xl flex flex-col gap-6 md:hidden border-b border-zinc-100"
           >
             {links.map((link) => (
               <Link

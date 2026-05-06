@@ -27,10 +27,11 @@ function ScrollToTop() {
 function Layout() {
   const { lang } = useLanguage();
   return (
-    <div className={`min-h-screen flex flex-col font-sans antialiased text-black bg-[#f7c621] ${lang === 'ar' ? 'font-arabic' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <div className={`min-h-screen flex flex-col font-sans antialiased text-stone-900 bg-[#F8F7F5] selection:bg-stone-900 selection:text-[#F8F7F5] relative ${lang === 'ar' ? 'font-arabic' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+      <div className="fixed inset-0 bg-noise z-50 mix-blend-overlay"></div>
       <ScrollToTop />
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 relative z-10 w-full">
         <Outlet />
       </main>
       <Footer />
