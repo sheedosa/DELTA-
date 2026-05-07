@@ -61,8 +61,8 @@ const translations: Record<Language, Record<string, string>> = {
     'about.company.link': 'Contact Us',
 
     // Products
-    'products.title1': 'Product',
-    'products.title2': 'Categories',
+    'products.title1': 'Explore Our',
+    'products.title2': 'Products',
     'products.desc': 'Explore our wide range from luxurious classic styles to minimal modern aesthetics.',
     'products.filter.all': 'All',
     'products.filter.levers': 'Architectural Door Handles',
@@ -113,7 +113,6 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.factory.name': 'Technical Support',
     'contact.factory.role': 'Turkey',
     'contact.factory.email': 'Info@deltahandles.com',
-    'contact.factory.phone': '+90 532 354 4388',
 
     'contact.form.title': 'Send us a message',
     'contact.form.name': 'Name',
@@ -192,8 +191,8 @@ const translations: Record<Language, Record<string, string>> = {
     'about.company.link': 'تواصل معنا',
 
     // Products
-    'products.title1': 'فئات',
-    'products.title2': 'المنتجات',
+    'products.title1': 'استكشف',
+    'products.title2': 'منتجاتنا',
     'products.desc': 'اكتشف تشكيلتنا الواسعة التي تتراوح بين الأساليب الكلاسيكية الفاخرة والجماليات العصرية المينيمالية.',
     'products.filter.all': 'الكل',
     'products.filter.levers': 'مقابض الأبواب المعمارية',
@@ -244,7 +243,6 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.factory.name': 'الدعم الفني',
     'contact.factory.role': 'تركيا',
     'contact.factory.email': 'Info@deltahandles.com',
-    'contact.factory.phone': '+90 532 354 4388',
 
     'contact.form.title': 'أرسل لنا رسالة',
     'contact.form.name': 'الاسم',

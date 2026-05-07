@@ -32,7 +32,7 @@ export function Home() {
   return (
     <div className="min-h-screen pt-20 sm:pt-24 font-sans text-white relative bg-stone-950 overflow-hidden">
       {/* Photographic Architectural Background w/ Dark overlay */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <img
           src="https://lh3.googleusercontent.com/d/1YWvtsl0Z_5ATzPdEiCoaCUESWb04Z0BI"
           alt=""
@@ -41,6 +41,15 @@ export function Home() {
           className="absolute inset-0 w-full h-full object-cover object-center opacity-60 transition-opacity duration-1000"
           referrerPolicy="no-referrer"
         />
+        {/* Subtle Logo Watermark Background */}
+        <div className="absolute inset-0 flex items-center justify-end sm:justify-end opacity-15">
+          <img 
+            src="https://lh3.googleusercontent.com/d/1bbJINa3-02CEfVaHMQvQ987O-lWtoktF" 
+            alt="" 
+            className="w-[150vw] sm:w-[90vw] h-auto object-contain translate-x-[30%] sm:translate-x-[20%] rtl:-translate-x-[20%]" 
+            referrerPolicy="no-referrer"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/40 to-stone-900 border-b border-stone-800"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/50 to-transparent rtl:from-transparent rtl:via-stone-950/50 rtl:to-stone-950/90"></div>
       </div>
@@ -178,6 +187,38 @@ export function Home() {
                 <motion.img 
                   initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.8 }}
                   src="https://lh3.googleusercontent.com/d/1x-0aMJcNN6aZr37jY_6_3gVbOzyVYtRs" 
+                  alt="Delta Door Pull" 
+                  loading="lazy"
+                  className="w-full aspect-square object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 border border-stone-800 md:translate-y-8" 
+                  referrerPolicy="no-referrer"
+                />
+                <motion.img 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.8 }}
+                  src="https://lh3.googleusercontent.com/d/1bGj7NPEaVZ6bVx8z6VeoQXjGQcGl9N4M" 
+                  alt="Delta Door Handle" 
+                  loading="lazy"
+                  className="w-full aspect-square object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 border border-stone-800" 
+                  referrerPolicy="no-referrer"
+                />
+                <motion.img 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.8 }}
+                  src="https://lh3.googleusercontent.com/d/1I2uCgv9JIFOmNjVmNkdVjm8SHtkfSKGv" 
+                  alt="Delta Product" 
+                  loading="lazy"
+                  className="w-full aspect-square object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 border border-stone-800 md:translate-y-8" 
+                  referrerPolicy="no-referrer"
+                />
+                <motion.img 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.8 }}
+                  src="https://lh3.googleusercontent.com/d/1QW6inFpf-kBi-XI2mFFDRa4WKylpKnGq" 
+                  alt="Delta Design Detail" 
+                  loading="lazy"
+                  className="w-full aspect-square object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 border border-stone-800" 
+                  referrerPolicy="no-referrer"
+                />
+                <motion.img 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.8 }}
+                  src="https://lh3.googleusercontent.com/d/1d1VMqIAUdmaZRQy3ct2192st09cTbZJV" 
                   alt="Delta Door Pull" 
                   loading="lazy"
                   className="w-full aspect-square object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 border border-stone-800 md:translate-y-8" 

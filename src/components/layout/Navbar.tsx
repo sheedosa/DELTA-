@@ -42,7 +42,7 @@ export function Navbar() {
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled || isOpen
           ? "bg-[#F8F7F5]/90 backdrop-blur-md border-b border-stone-200 py-4 shadow-sm text-stone-900"
-          : `bg-transparent py-4 sm:py-6 ${location.pathname === "/" ? "text-white" : "text-stone-900"}`
+          : "bg-transparent py-4 sm:py-6 text-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12 flex justify-between items-center">
@@ -50,7 +50,7 @@ export function Navbar() {
           <img
             src={logoUrl}
             alt="Delta Logo"
-            className={`h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105 ${!scrolled && !isOpen && location.pathname === "/" ? "brightness-0 invert" : ""}`}
+            className={`h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105 ${!scrolled && !isOpen ? "brightness-0 invert" : ""}`}
             referrerPolicy="no-referrer"
           />
           <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest mt-1 opacity-70">

@@ -6,18 +6,45 @@ export function About() {
   const { t } = useLanguage();
 
   return (
-    <div className="pt-32 pb-24 px-6 sm:px-12 max-w-7xl mx-auto min-h-screen">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h1 className="mb-16 sm:mb-24 text-stone-900 flex flex-col gap-2">
-          <span className="text-sm md:text-base font-medium tracking-[0.2em] uppercase text-stone-500 rtl:tracking-normal">{t('about.title1')}</span>
-          <span className="font-display text-[3.5rem] sm:text-6xl md:text-[80px] lg:text-[100px] leading-[1] font-bold uppercase tracking-tighter text-stone-900 rtl:font-sans rtl:tracking-normal">{t('about.title2')}</span>
-          <span className="text-sm md:text-base font-medium tracking-[0.2em] uppercase text-stone-400 mt-2 rtl:tracking-normal">{t('about.title3')}</span>
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+    <div className="min-h-screen flex flex-col">
+      <div className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 overflow-hidden bg-stone-950 text-white">
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <img
+            src="https://lh3.googleusercontent.com/d/1YWvtsl0Z_5ATzPdEiCoaCUESWb04Z0BI"
+            alt=""
+            loading="eager"
+            fetchPriority="high"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-30"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/60 to-stone-950 border-b border-stone-800"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/50 to-transparent rtl:from-transparent rtl:via-stone-950/50 rtl:to-stone-950/90"></div>
+        </div>
+        <div className="absolute top-0 right-0 opacity-[0.05] pointer-events-none sm:translate-x-1/4 -translate-y-1/4 z-10 w-full h-full flex justify-end items-start overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/d/1bbJINa3-02CEfVaHMQvQ987O-lWtoktF" alt="" className="w-full max-w-[80vw] min-w-[400px] object-contain" referrerPolicy="no-referrer" />
+        </div>
+        <div className="px-6 sm:px-12 max-w-7xl mx-auto relative z-20 w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-white flex flex-col gap-2">
+              <span className="text-sm md:text-base font-medium tracking-[0.2em] uppercase text-stone-400 rtl:tracking-normal">{t('about.title1')}</span>
+              <span className="font-display text-[3.5rem] sm:text-6xl md:text-[80px] lg:text-[100px] leading-[1] font-bold uppercase tracking-tighter text-white rtl:font-sans rtl:tracking-normal">{t('about.title2')}</span>
+              <span className="text-sm md:text-base font-medium tracking-[0.2em] uppercase text-stone-400 mt-2 rtl:tracking-normal">{t('about.title3')}</span>
+            </h1>
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="pt-16 pb-24 px-6 sm:px-12 max-w-7xl mx-auto flex-grow w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
           <div className="space-y-6 md:pr-12 rtl:md:pr-0 rtl:md:pl-12">
              <p className="text-2xl leading-relaxed font-display font-medium text-stone-800 tracking-tight">
                {t('about.desc1')}
@@ -58,6 +85,7 @@ export function About() {
           </div>
         </div>
       </motion.div>
+    </div>
     </div>
   );
 }
