@@ -6,7 +6,6 @@ import heroBg from "../assets/images/hero-bg.png";
 import logo from "../assets/images/logo.png";
 import pLever05 from "../assets/images/product-lever-05.png";
 
-
 export function Craft() {
   const { t } = useLanguage();
   return (

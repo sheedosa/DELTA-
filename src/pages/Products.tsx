@@ -17,7 +17,6 @@ import pSystem01 from "../assets/images/product-system-01.png";
 import pLever05 from "../assets/images/product-lever-05.png";
 import pClassic01 from "../assets/images/product-classic-01.png";
 
-
 export function Products() {
   const { t } = useLanguage();
 

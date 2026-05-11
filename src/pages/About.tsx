@@ -6,7 +6,6 @@ import heroBg from "../assets/images/hero-bg.png";
 import logo from "../assets/images/logo.png";
 import productSystem01 from "../assets/images/product-system-01.png";
 
-
 export function About() {
   const { t } = useLanguage();
 

@@ -50,7 +50,7 @@ function Layout() {
   }, []);
 
   return (
-    <div className={`min-h-screen flex flex-col font-sans antialiased text-stone-900 bg-[#F8F7F5] selection:bg-stone-900 selection:text-[#F8F7F5] relative`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <div className={`min-h-screen flex flex-col font-sans antialiased text-stone-900 bg-[#F8F7F5] selection:bg-stone-900 selection:text-[#F8F7F5] relative ${lang === 'ar' ? 'font-arabic' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <div className="fixed inset-0 bg-noise z-50 mix-blend-overlay"></div>
       <ScrollToTop />
       <Navbar />

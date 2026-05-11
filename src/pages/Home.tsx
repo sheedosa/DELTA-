@@ -14,7 +14,6 @@ import productLever03 from "../assets/images/product-lever-03.png";
 import productPull02 from "../assets/images/product-pull-02.png";
 import productPull03 from "../assets/images/product-pull-03.png";
 
-
 export function Home() {
   const { t } = useLanguage();
 
@@ -78,7 +77,7 @@ export function Home() {
                 <span className="block text-sm md:text-base font-medium tracking-[0.2em] md:tracking-[0.4em] uppercase text-stone-400 mb-4 rtl:tracking-normal">
                   {t("home.hero.title_part1")}
                 </span>
-                <span className="block font-display text-[4rem] sm:text-6xl md:text-[80px] lg:text-[100px] leading-[0.9] font-bold uppercase tracking-tighter rtl:font-sans rtl:tracking-normal w-[120%] drop-shadow-2xl">
+                <span className="block font-display text-[3.5rem] sm:text-6xl md:text-[80px] lg:text-[100px] leading-[0.9] font-bold uppercase tracking-tighter rtl:font-sans rtl:tracking-normal w-full md:w-[120%] drop-shadow-2xl">
                   {t("home.hero.title_part2")}
                 </span>
               </h1>
@@ -110,7 +109,7 @@ export function Home() {
                   {t("home.hero.btn_explore")}{" "}
                   <ArrowRight
                     size={16}
-                    className="group-hover:translate-x-1 transition-transform"
+                    className="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"
                   />
                 </Link>
                 <Link

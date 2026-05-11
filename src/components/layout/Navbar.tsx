@@ -6,7 +6,6 @@ import { useLanguage } from "../../context/LanguageContext";
 
 import logo from "../../assets/images/logo.png";
 
-
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);

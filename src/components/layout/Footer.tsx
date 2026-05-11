@@ -3,7 +3,6 @@ import { useLanguage } from "../../context/LanguageContext";
 
 import logo from "../../assets/images/logo.png";
 
-
 export function Footer() {
   const { t } = useLanguage();
   return (

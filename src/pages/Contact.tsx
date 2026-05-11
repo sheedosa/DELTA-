@@ -5,7 +5,6 @@ import heroBg from "../assets/images/hero-bg.png";
 import logo from "../assets/images/logo.png";
 import pClassic01 from "../assets/images/product-classic-01.png";
 
-
 export function Contact() {
   const { t } = useLanguage();
 
